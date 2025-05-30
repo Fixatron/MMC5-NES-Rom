@@ -1,0 +1,6 @@
+{
+    "executable": "C:\\cc65\\bin\\cl65",
+    "input": "main.asm",
+    "params": "-C cfg\\mmc5.cfg -Wl --dbgfile,temp\\main.dbg -g -m temp\\map.txt --verbose --target nes -o main.nes"
+}
+  
