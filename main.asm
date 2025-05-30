@@ -2,7 +2,7 @@
 
 .segment "HEADER"
   .byte $4E,$45,$53,$1A
-  .byte $02    ; 32kb PRG
+  .byte $02    ; 512kb PRG
   .byte $08    ; 128KB CHR
   .byte $50
   .byte $00
@@ -26,6 +26,7 @@ loading_nametable:
 
 .segment "CODE2"
     .byte "BANK2 DATA HERE", 0
+
 
 
 .segment "CODE3"
@@ -61,7 +62,7 @@ loading_nametable:
     STA $5103       ; enable PRG-RAM
 
     ; Set MMC5 PRG Mode 3 (4 x 8KB banks)
-    LDA #$03
+    LDA #$00
     STA $5100
 
     ; Assign 8KB PRG banks

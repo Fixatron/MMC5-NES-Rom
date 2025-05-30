@@ -7,7 +7,11 @@ main.o:
     CODE0             Offs=000000  Size=000010  Align=00001  Fill=0000
     CODE1             Offs=000000  Size=000010  Align=00001  Fill=0000
     CODE2             Offs=000000  Size=000010  Align=00001  Fill=0000
-    CODE3             Offs=000000  Size=00011E  Align=00001  Fill=0000
+    CODE3             Offs=000000  Size=000010  Align=00001  Fill=0000
+    CODE4             Offs=000000  Size=000010  Align=00001  Fill=0000
+    CODE5             Offs=000000  Size=000010  Align=00001  Fill=0000
+    CODE6             Offs=000000  Size=000010  Align=00001  Fill=0000
+    CODE7             Offs=000000  Size=00011E  Align=00001  Fill=0000
     CHARS             Offs=000000  Size=010000  Align=00001  Fill=0000
 
 
@@ -19,10 +23,14 @@ CHARS                 000000  00FFFF  010000  00001
 HEADER                000000  00000F  000010  00001
 CODE0                 008000  00800F  000010  00001
 CODE1                 00A000  00A00F  000010  00001
+CODE4                 00A000  00A00F  000010  00001
 CODE2                 00C000  00C00F  000010  00001
-CODE3                 00E000  00E11D  00011E  00001
-RODATA                00E11E  00E4DD  0003C0  00001
-VECTORS               00FFFA  00FFFF  000006  00001
+CODE5                 00C000  00C00F  000010  00001
+CODE6                 00C000  00C00F  000010  00001
+CODE3                 00E000  00E00F  000010  00001
+CODE7                 00E010  00E12D  00011E  00001
+RODATA                00E12E  00E4ED  0003C0  00001
+VECTORS               017FFA  017FFF  000006  00001
 
 
 Exports list by name:
@@ -38,5 +46,5 @@ __STACKSIZE__             000300 REA
 Imports list:
 -------------
 __STACKSIZE__ ([linker generated]):
-    [linker generated]        cfg\mmc5.cfg:25
+    [linker generated]        cfg\mmc5.cfg:29
 
