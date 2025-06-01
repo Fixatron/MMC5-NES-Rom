@@ -2,7 +2,7 @@
 
 .segment "HEADER"
   .byte $4E,$45,$53,$1A
-  .byte $02    ; 512kb PRG
+  .byte $02    ; 64kb PRG
   .byte $08    ; 128KB CHR
   .byte $50
   .byte $00
@@ -26,8 +26,6 @@ loading_nametable:
 
 .segment "CODE2"
     .byte "BANK2 DATA HERE", 0
-
-
 
 .segment "CODE3"
 .proc reset
@@ -66,17 +64,17 @@ loading_nametable:
     STA $5100
 
     ; Assign 8KB PRG banks
-    LDA #$00
-    STA $5114
-    LDA #$01
-    STA $5115
     LDA #$02
+    STA $5114
+    LDA #$02
+    STA $5115
+    LDA #$00
     STA $5116
-    LDA #$03
-    STA $5117
+    ; LDA #$07
+    ; STA $5117 redundant, this bank doesn't change, right?
 
     LDA #$03
-    STA $5101   ; Set CHR bank size to 1 KB
+    STA $5101   ; Set CHR bank size to 1 KB [03 is 8x8kb mode, 00 is 1x32kb mode]
     ; LDA #$01
     ; STA $5105   ; MMC5 CHR mode: 8KB background, 8KB sprite
 
