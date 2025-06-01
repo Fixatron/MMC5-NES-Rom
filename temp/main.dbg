@@ -1,6 +1,6 @@
 version	major=2,minor=0
 info	csym=0,file=628,lib=0,line=141,mod=1,scope=4,seg=13,span=129,sym=15,type=5
-file	id=0,name="c:\Users\shark\Documents\Games\MMC5_Rom\main.asm",size=3985,mtime=0x683CDBA5,mod=0
+file	id=0,name="c:\Users\shark\Documents\Games\MMC5_Rom\main.asm",size=3872,mtime=0x683CDCDC,mod=0
 file	id=1,name="CHR-ROM.chr",size=65536,mtime=0x683CD86C,mod=0
 line	id=0,file=0,line=25,span=14
 line	id=1,file=0,line=19,span=11
