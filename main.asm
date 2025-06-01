@@ -60,15 +60,15 @@ loading_nametable:
     STA $5103       ; enable PRG-RAM
 
     ; Set MMC5 PRG Mode 3 (4 x 8KB banks)
-    LDA #$00      ; i want prgMode3, but that doesn't work. i need to use prg mode 0 1x32kb to get the 8kb banks to swap, otherwise the banks get swapped in with garbage data.
+    LDA #$03      ; i want prgMode3, but that doesn't work. i need to use prg mode 0 1x32kb to get the 8kb banks to swap, otherwise the banks get swapped in with garbage data.
     STA $5100
 
     ; Assign 8KB PRG banks
-    LDA #$02
+    LDA #$80      ; high bit must be set for ROM 
     STA $5114
-    LDA #$02
+    LDA #$81
     STA $5115
-    LDA #$00
+    LDA #$82
     STA $5116
     ; LDA #$07
     ; STA $5117 redundant, this bank doesn't change, right?
