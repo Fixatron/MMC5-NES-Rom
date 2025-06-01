@@ -1,4 +1,6 @@
 ; # Create a basic MMC5 test ROM main.asm that uses PRG Mode 0 and sets up basic memory
+; this is a basic code that helped me get started. I have since moved over to the main.asm file for compiling
+; there is no difference in the filename extension .s or .asm, i just didnt want to make a new name. Not sure whats less confusing
 
 .segment "HEADER"
     .byte 'N', 'E', 'S', $1A      ; NES file magic
@@ -28,17 +30,17 @@
 
     ; MMC5 setup
     LDA #$00
-    STA $5115       ; PRG Mode 0 (4 x 8KB)
+    STA $5100       ; PRG Mode 0 (1 x 32KB)
 
     ; Load test banks
     LDA #$00
-    STA $5116       ; Bank 0 → $8000
+    STA $5114       ; Bank 0 → $8000
     LDA #$01
-    STA $5117       ; Bank 1 → $A000
+    STA $5115       ; Bank 1 → $A000
     LDA #$02
-    STA $5118       ; Bank 2 → $C000
+    STA $5116       ; Bank 2 → $C000
     LDA #$03
-    STA $5119       ; Bank 3 → $E000
+    STA $5117       ; Bank 3 → $E000 this bank is actually fixed and nothing will get swapped here
 
     ; Wait for vblank
     BIT $2002
