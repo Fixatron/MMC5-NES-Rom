@@ -183,4 +183,4 @@ palettes:
 .endproc
 
 .segment "CHARS"
-  .incbin "tf-hack_2.chr"
+  .incbin "CHR-ROM.chr"
