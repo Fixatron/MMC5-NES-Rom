@@ -1,6 +1,6 @@
 version	major=2,minor=0
 info	csym=0,file=628,lib=0,line=141,mod=1,scope=4,seg=13,span=129,sym=15,type=5
-file	id=0,name="c:\Users\shark\Documents\Games\MMC5_Rom\main.asm",size=3610,mtime=0x6839EABE,mod=0
+file	id=0,name="c:\Users\shark\Documents\Games\MMC5_Rom\main.asm",size=3874,mtime=0x683CD258,mod=0
 file	id=1,name="tf-hack_2.chr",size=65536,mtime=0x68389385,mod=0
 line	id=0,file=0,line=25,span=14
 line	id=1,file=0,line=19,span=11

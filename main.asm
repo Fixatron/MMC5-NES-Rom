@@ -56,11 +56,11 @@ loading_nametable:
     STA $5117       ; this actually probably isn't strictly necessary, but documentation tells us that $5117 must have a reliable power-on value of $FF.
     LDA #$02
     STA $5102       ; enable PRG-RAM
-    LDA #$03
+    LDA #$01        ; "In order to enable writing to PRG RAM, this must be set to binary '01' (e.g. $01)."-NESDev
     STA $5103       ; enable PRG-RAM
 
     ; Set MMC5 PRG Mode 3 (4 x 8KB banks)
-    LDA #$00
+    LDA #$00      ; i want prgMode3, but that doesn't work. i need to use prg mode 0 1x32kb to get the 8kb banks to swap, otherwise the banks get swapped in with garbage data.
     STA $5100
 
     ; Assign 8KB PRG banks
@@ -146,8 +146,8 @@ forever:
 
 hello:
   .byte $00, $00, $00, $00 	; Why do I need these here?
-  .byte $00, $00, $00, $00
-  .byte $6c, $00, $00, $6c
+  .byte $00, $00, $00, $00  ; https://www.nesdev.org/wiki/PPU_registers#OAMADDR_precautions
+  .byte $6c, $00, $00, $6c  ; ^^^ probably why those blank ones are needed
   .byte $6c, $01, $00, $76
   .byte $6c, $02, $00, $80
   .byte $6c, $02, $00, $8A
